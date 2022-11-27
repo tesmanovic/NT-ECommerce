@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "d8883aba-ad95-4bf1-a9e8-5dfa3b3435e5",
+		"name": "NulTien Ecommerce Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14217744"
+	},
+	"item": [
+		{
+			"name": "GetShoppingCartByCustomerId",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:{{PORT}}/customers/12345/cart",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"customers",
+						"12345",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddProductToShoppingCart",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\":11111,\r\n    \"quantity\":10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:{{PORT}}/customers/12345/cart",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"customers",
+						"12345",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateOrder",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Address\":{\r\n        \"City\":\"Belgrade\",\r\n        \"Street\":\"Sumatovacka\",\r\n        \"HouseNumber\":\"124A\"\r\n    },\r\n    \"PhoneNumber\":\"0656011065\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:{{PORT}}/customers/12345/orders",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"customers",
+						"12345",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "PORT",
+			"value": "7244",
+			"type": "string"
+		}
+	]
+}
